@@ -1,0 +1,425 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+@property --rotate {
+  syntax: "<angle>";
+  initial-value: 132deg;
+  inherits: false;
+}
+
+:root {
+  --card-height: 65vh;
+  --card-width: calc(var(--card-height) / 1.5);
+  --famille-1: rgb(255, 136, 0);
+  --famille-2: rgb(0, 140, 255);
+  --famille-3: rgb(255, 30, 0);
+  --famille-4: rgb(9, 255, 0);
+  --famille-5: rgb(255, 238, 0);
+  --famille-6: rgb(255, 0, 255);
+  --famille-7: ;
+}
+
+
+
+  
+  @keyframes spin {
+    0% {
+      --rotate: 0deg;
+    }
+    100% {
+      --rotate: 360deg;
+    }
+  }
+
+
+#family1 {
+  border: 8px solid white;
+    background: linear-gradient(
+    45deg,
+    rgba(77, 29, 0, 1) 0%,
+    rgba(255, 82, 0, 1) 100%
+  );
+  background-size: 120% 120%;
+  animation: gradient 5s ease infinite;
+}
+#family2 {
+  border: 8px solid white;
+    background: linear-gradient(
+    45deg,
+    rgba(255, 82, 0, 1) 0%,
+    rgba(255, 223, 0, 1) 100%
+  );
+  background-size: 120% 120%;
+  animation: gradient 5s ease infinite;
+}
+#family3 {
+  border: 8px solid white;
+    background: linear-gradient(
+    45deg,
+    rgba(255, 228, 0, 1) 0%,
+    rgba(226, 236, 0, 1) 30%,
+    rgba(98, 255, 0, 1) 100%
+  );
+  background-size: 120% 120%;
+  animation: gradient 5s ease infinite;
+}
+#family4 {
+  border: 8px solid white;
+    background: linear-gradient(
+    45deg,
+    rgba(124, 255, 0, 1) 0%,
+    rgba(0, 222, 255, 1) 100%
+  );
+  background-size: 120% 120%;
+  animation: gradient 5s ease infinite;
+}
+#family5 {
+  border: 8px solid white;
+    background: linear-gradient(
+    45deg,
+    rgba(0, 171, 255, 1) 11%,
+    rgba(52, 0, 255, 1) 100%
+  );
+  background-size: 120% 120%;
+  animation: gradient 5s ease infinite;
+}
+#family6 {
+  border: 8px solid white;
+    background: linear-gradient(
+    45deg,
+    rgba(35, 0, 255, 1) 0%,
+    rgba(172, 0, 255, 1) 100%
+  );
+  background-size: 120% 120%;
+  animation: gradient 5s ease infinite;
+}
+#family7 {
+  border: 8px solid white;
+    background: linear-gradient(
+    45deg,
+    rgba(172, 0, 255, 1) 0%,
+    rgba(33, 33, 33, 1) 100%
+  );
+  background-size: 120% 120%;
+  animation: gradient 5s ease infinite;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: white;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  overflow-x: hidden;
+  justify-content: center;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 5s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 20% 50%;
+  }
+  50% {
+    background-position: 80% 50%;
+  }
+  100% {
+    background-position: 20% 50%;
+  }
+}
+
+section {
+  padding: 40px 0;
+  width: 90%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+section h1 {
+  position: absolute;
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  flex-wrap: wrap;
+  width: 100%;
+  gap: 32px;
+  margin-top: 40px;
+}
+
+.card {
+  /* width: 240px;*/
+  min-width: 240px;
+  min-height: 370px;
+  /*  height: calc((240px)*1.54);*/
+}
+
+.card {
+  background: white;
+  width: var(--card-width);
+  height: var(--card-height);
+  position: relative;
+  border-radius: 16px;
+  text-align: center;
+  color: rgb(88 199 250 / 0%);
+  cursor: pointer;
+}
+
+.card * {
+  color: black;
+}
+
+.content-card {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    border-radius: 16px;
+    transform: rotateX(30deg), rotateY(30deg);
+}
+
+.content-card::before {
+    content: "";
+    width: 106%;
+    height: 104%;
+    border-radius: 20px;
+    background-image: linear-gradient(
+      var(--rotate)
+      , #5ddcff, #3c67e3 43%, #4e00c2);
+      position: absolute;
+      z-index: -1;
+      animation: spin 2.5s linear infinite;
+  }
+  
+  .content-card::after {
+    position: absolute;
+    content: "";
+    top: calc(var(--card-height) / 6);
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale(0.8);
+    filter: blur(calc(var(--card-height) / 6));
+    transition: opacity .5s;
+    animation: spin 2.5s linear infinite;
+  }
+
+#BonusCards {
+  flex-wrap: nowrap;
+  gap: 60px;
+}
+
+#BonusCards > p {
+  font-size: 1.4rem;
+  text-align: center;
+}
+
+@media (max-width: 570px) {
+  #BonusCards {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}
+
+.title_card {
+  position: absolute;
+  top: 0;
+  border-radius: 0 0 5px 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 32px;
+  width: 50%;
+}
+
+.title_card > p {
+    z-index: 1;
+    color: white;
+    font-weight: 600;
+}
+
+.title_card::before {
+    content: "";
+    width: 106%;
+    height: 104%;
+    border-radius: 0 0 10px 10px;
+    background-image: linear-gradient(
+      var(--rotate)
+      , #5ddcff, #3c67e3 43%, #4e00c2);
+      position: absolute;
+      z-index: 0;
+      animation: spin 2.5s linear infinite;
+  }
+  
+  .title_card::after {
+    position: absolute;
+    content: "";
+    top: calc(var(--card-height) / 6);
+    left: 0;
+    right: 0;
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale(0.8);
+    filter: blur(calc(var(--card-height) / 6));
+    transition: opacity .5s;
+    animation: spin 2.5s linear infinite;
+  }
+
+.main_card {
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--famille-1);
+  width: 80%;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.main_card::before {
+    content: "";
+    width: 80%;
+    height: 30%;
+    border-radius: 10px;
+    background-image: linear-gradient(
+      var(--rotate)
+      , #5ddcff, #3c67e3 43%, #4e00c2);
+      position: absolute;
+      z-index: 0;
+      animation: spin 2.5s linear infinite;
+  }
+  
+  .main_card::after {
+    position: absolute;
+    content: "";
+    top: calc(var(--card-height) / 6);
+    left: 0;
+    right: 0;
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+    transform: scale(0.8);
+    filter: blur(calc(var(--card-height) / 6));
+    transition: opacity .5s;
+    animation: spin 2.5s linear infinite;
+  }
+
+
+
+.main_card > p {
+    z-index: 1;
+    color: white;
+    font-weight: 600;
+  padding: 6px 0;
+  width: 80%;
+}
+
+.main_card > img {
+  z-index: 1;
+  margin-top: -1px;
+  border-radius: 0 0 10px 10px;
+  width: 100%;
+}
+
+.description_card {
+  margin: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  font-size: 0.8rem;
+}
+
+.description_card .description_card_title {
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+#codeInput {
+  display: none;
+  position: relative;
+  top: 45%;
+}
+
+#codeInput #code {
+  outline: none;
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  color: black;
+}
+
+#codeInput > button {
+  border: none;
+  border-radius: 20px;
+  padding: 10px 20px;
+  color: black;
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+#codeInput > button:hover {
+  border-radius: 20px;
+  padding: 10px 20px;
+  box-shadow: inset 0 0 0 2px #23a6d5;
+}
+
+#errorContain {
+  position: relative;
+  top: 45%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 40%;
+}
+
+#errorMessage {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+#compare {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+
+.hidden {
+  display: none;
+}
+
+.correct {
+    color: green;
+}
+
+.incorrect {
+    color: red;
+}
+
+/* ==========================
+=============================
+================================ */
+
