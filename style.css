@@ -218,16 +218,25 @@ h1 span {
 /* ===================================== */
 
 .card {
-  min-width: 240px;
-  min-height: 370px;
-  max-width: 240px;
-  max-height: 370px;
+  min-width: 280px;
+  min-height: 430px;
+  max-width: 280px;
+  max-height: 430px;
+}
+
+@media (max-width: 495px) {
+  .card {
+    min-width: 240px;
+    min-height: 370px;
+    max-width: 240px;
+    max-height: 370px;
+  }
 }
 
 .card {
   background: linear-gradient(90deg, rgba(93,220,255,1) 0%, rgba(60,103,227,1) 43%, rgba(78,0,194,1) 100%);
-  width: var(--card-width + 4px);
-  height: var(--card-height + 30px);
+  width: var(--card-width);
+  height: var(--card-height);
   position: relative;
   border-radius: 16px;
   text-align: center;
@@ -303,20 +312,18 @@ h1 span {
 
   #BonusCards {
     flex-wrap: wrap;
+    gap: 60px;
+  }
+}
+
+@media (max-height: 750px) {
+  .container {
+    margin: 0;
+  }
+
+  #BonusCards {
+    flex-wrap: wrap;
     gap: 20px;
-  }
-
-  #BonusCards > p{
-    font-size: 1rem;
-  }
-
-  h1 {
-    font-size: 1rem;
-  }
-  
-  h1 span {
-    font-size: 0.8rem;
-    font-weight: 500;
   }
 
 }
@@ -330,7 +337,7 @@ h1 span {
   justify-content: center;
   align-items: center;
   height: 32px;
-  width: 50%;
+  width: 75%;
 }
 
 .title_card > p {
@@ -527,6 +534,19 @@ h1 span {
     transform: translateX(-50%);
     width: 20px;
     z-index: 2;
+  }
+
+  h1 {
+    font-size: 1rem;
+  }
+  
+  h1 span {
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+
+  #BonusCards > p{
+    font-size: 1rem;
   }
 }
 
