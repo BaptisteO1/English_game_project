@@ -7,6 +7,8 @@ document.getElementById('bonusFamily6').classList.add('hidden');
 document.getElementById('bonusFamily7').classList.add('hidden');
 document.getElementById('BonusCards').classList.add('hidden');
 document.getElementById('codeInput').classList.add('hidden');
+document.getElementById('errorContain').classList.add('hidden');
+document.getElementById('inputContain').classList.add('hidden');
 
 // Afficher titre section
 let titleSection = document.getElementById('title_Home').innerText = 'Choose your Familly';
@@ -23,8 +25,11 @@ const familyBonusMapping = {
 };
 
 function showCodeInput(cardId, correctCode) {
+    document.getElementById('inputContain').classList.remove('hidden');
+    document.getElementById('inputContain').classList.add('flex');
     // Masquer les cartes et afficher le champ de texte
     document.getElementById('cardsContainer').classList.add('hidden');
+    document.getElementById('codeInput').classList.remove('hidden');
     document.getElementById('codeInput').classList.add('show');
     titleSection = document.getElementById('title_Home').innerText = 'Enter The Code of your Family';
    
@@ -72,7 +77,7 @@ function checkCode() {
         // Afficher une nouvelle carte avec une nouvelle couleur
         document.getElementById(cardId).style.backgroundColor = getRandomColor();
 
-        titleSection = document.getElementById('title_Home').innerHTML = 'here\'s your last card <br /> <span>place it in the right spot on the board!</span>';
+        titleSection = document.getElementById('title_Home').innerHTML = 'Here\'s your last card <br /> <span>place it in the right spot on the board!</span>';
         
         // Afficher la carte bonus correspondante
         document.getElementById('BonusCards').classList.remove('hidden');
@@ -97,8 +102,10 @@ function checkCode() {
 
     } else {
         // Masquer le champ de texte
-        document.getElementById('codeInput').classList.remove('show');
-        document.getElementById('codeInput').classList.add('hidden');
+        document.getElementById('inputContain').classList.add('hidden');
+        
+        document.getElementById('errorContain').classList.remove('hidden');
+        document.getElementById('errorContain').classList.add('show');
 
         resultCompare = compareCode ();
         document.getElementById('compare').innerHTML = resultCompare;
@@ -110,10 +117,12 @@ function checkCode() {
             // Masquer les messages d'erreurs
             document.getElementById('errorMessage').innerText = '';
             document.getElementById('compare').innerHTML = '';
+            document.getElementById('code').value = '';
 
             document.getElementById('cardsContainer').classList.remove('hidden');
+            document.getElementById('inputContain').classList.remove('flex');
             titleSection = document.getElementById('title_Home').innerText = 'Choose your Familly';
-        }, 2500);
+        }, 5000);
     }
 }
 

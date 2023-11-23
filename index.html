@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <section class="section">
+    <section class="">
         <h1 id="title_Home">Choose your Familly</h1>
         <!-- Cartes représentant les familles -->
         <div class="center gallery" id="cardsContainer">
@@ -36,7 +36,7 @@
             <div class="gallery-controls" id="gallery-controls"></div>
         </div>
         <!-- Cartes représentant les bonus -->
-        <div class="container center" id="BonusCards">
+        <div class=" center" id="BonusCards">
             <p>You've just unlocked <br />your secret card!</p>
             <div class="card center tiltcard" data-tilt data-tilt-glare id="bonusFamily1">
                 <div class="content-card">
@@ -146,12 +146,14 @@
         </div>
           <!-- Champ de texte pour saisir le code -->
         <div id="codeInput">
-            <input type="text" id="code" placeholder="Entrez le code">
-            <button onclick="checkCode()">Validate</button>
-        </div>
-        <div id="errorContain">
-            <p id="errorMessage"></p>
-            <p id="compare"></p>
+            <div id="inputContain">
+                <input type="text" id="code" placeholder="Entrez le code">
+                <button onclick="checkCode()">Validate</button>
+            </div>
+            <div id="errorContain">
+                <p id="errorMessage"></p>
+                <p id="compare"></p>
+            </div>
         </div>
         
     </section> 

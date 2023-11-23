@@ -143,8 +143,8 @@
 body {
   width: 100vw;
   height: 100vh;
+  padding: 20px;
   display: flex;
-  overflow-x: hidden;
   justify-content: center;
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   background-size: 400% 400%;
@@ -152,7 +152,6 @@ body {
 }
 
 section {
-  padding: 40px;
   width: 90%;
   position: relative;
   display: flex;
@@ -200,6 +199,10 @@ h1 span {
 
 .show {
   display: block;
+}
+
+.flex {
+  display: flex;
 }
 
 .correct {
@@ -293,11 +296,29 @@ h1 span {
   text-align: center;
 }
 
-@media (max-width: 570px) {
+@media (max-width: 769px) {
+  .container {
+    margin: 0;
+  }
+
   #BonusCards {
     flex-wrap: wrap;
     gap: 20px;
   }
+
+  #BonusCards > p{
+    font-size: 1rem;
+  }
+
+  h1 {
+    font-size: 1rem;
+  }
+  
+  h1 span {
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+
 }
 
 .title_card {
@@ -422,11 +443,20 @@ h1 span {
 /* ===================================== */
 
 #codeInput {
-  position: relative;
-  top: 45%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-#codeInput #code {
+#inputContain {
+  width: 100%;
+  
+  gap: 20px;
+}
+
+#inputContain #code {
   outline: none;
   border: none;
   border-radius: 20px;
@@ -434,7 +464,7 @@ h1 span {
   color: black;
 }
 
-#codeInput > button {
+#inputContain > button {
   border: none;
   border-radius: 20px;
   padding: 10px 20px;
@@ -443,19 +473,17 @@ h1 span {
   transition: 0.2s ease;
 }
 
-#codeInput > button:hover {
+#inputContain > button:hover {
   border-radius: 20px;
   padding: 10px 20px;
   box-shadow: inset 0 0 0 2px #23a6d5;
 }
 
 #errorContain {
-  position: relative;
-  top: 45%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 40%;
+  width: 100%;
 }
 
 #errorMessage {
@@ -473,33 +501,31 @@ h1 span {
 /* ===================================== */
 
 .gallery {
-  width: 100%;
+  width: 90%;
   flex-direction: column;
   margin-top: 40px;
 }
 
-@media (max-width > 492px) {
+@media (max-width: 492px) {
   .gallery-item {
-    width: 80px;
-    height: 120px;
-    min-width: 80px;
-    min-height: 120px;
+    width: 20px;
+    height: 40px;
   }
 
   .gallery-item-2, .gallery-item-4 {
-    height: 140px;
+    height: 40px;
     opacity: 0.8;
-    width: 90px;
+    width: 20px;
     z-index: 1;
   }
 
   .gallery-item-3 {
     box-shadow: -2px 5px 33px 6px rgba(0, 0, 0, 0.35);
-    height: 154px;
+    height: 45px;
     opacity: 1;
     left: 50%;
     transform: translateX(-50%);
-    width: 100px;
+    width: 20px;
     z-index: 2;
   }
 }
@@ -518,8 +544,6 @@ h1 span {
   position: absolute;
   transition: all 0.3s ease-in-out;
   z-index: 0;
-  min-width: 240px;
-  min-height: 370px;
   border-radius: 16px;
   font-size: 1.6rem;
   font-weight: 600;
@@ -531,45 +555,45 @@ h1 span {
   color: rgb(88 199 250 / 0%);
   cursor: pointer;
   background: white;
-  width: var(--card-width-family);
-  height: var(--card-height-family);
+  width: 200px;
+  height: 300px;
 }
 
 .gallery-item-1 {
-  left: 15%;
+  left: 30%;
   opacity: 0.4;
   transform: translateX(-50%);
 }
 
 .gallery-item-2, .gallery-item-4 {
-  height: var(--card-height);
+  height: 350px;
   opacity: 0.8;
-  width: var(--card-width);
+  width: 250px;
   z-index: 1;
 }
 
 .gallery-item-2 {
-  left: 30%;
+  left: 40%;
   transform: translateX(-50%);
 }
 
 .gallery-item-3 {
   box-shadow: -2px 5px 33px 6px rgba(0, 0, 0, 0.35);
-  height: var(--card-height);
+  width: 240px;
+  height: 370px;
   opacity: 1;
   left: 50%;
   transform: translateX(-50%);
-  width: var(--card-width);
   z-index: 2;
 }
 
 .gallery-item-4 {
-  left: 70%;
+  left: 60%;
   transform: translateX(-50%);
 }
 
 .gallery-item-5 {
-  left: 85%;
+  left: 70%;
   opacity: 0.4;
   transform: translateX(-50%);
 }
@@ -577,7 +601,6 @@ h1 span {
 .gallery-controls {
   display: flex;
   justify-content: center;
-  margin: 25px 0;
   height: 100px;
 }
 
