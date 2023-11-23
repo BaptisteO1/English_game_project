@@ -6,9 +6,16 @@
   inherits: false;
 }
 
+/* ================================ */
+/* ============= ROOT ============= */
+/* ================================ */
+
+
 :root {
   --card-height: 65vh;
   --card-width: calc(var(--card-height) / 1.5);
+  --card-height-family: 55vh;
+  --card-width-family: calc(var(--card-height) / 1.5);
   --famille-1: rgb(255, 136, 0);
   --famille-2: rgb(0, 140, 255);
   --famille-3: rgb(255, 30, 0);
@@ -20,8 +27,22 @@
 }
 
 
-
+/* ===================================== */
+/* ============= ANIMATION ============= */
+/* ===================================== */
   
+@keyframes gradient {
+  0% {
+    background-position: 20% 50%;
+  }
+  50% {
+    background-position: 80% 50%;
+  }
+  100% {
+    background-position: 20% 50%;
+  }
+}
+
   @keyframes spin {
     0% {
       --rotate: 0deg;
@@ -31,6 +52,9 @@
     }
   }
 
+/* ===================================== */
+/* ============= FAMILY CARD =========== */
+/* ===================================== */
 
 #family1 {
   border: 8px solid white;
@@ -104,6 +128,10 @@
   animation: gradient 5s ease infinite;
 }
 
+/* ===================================== */
+/* ============= GENERAL =============== */
+/* ===================================== */
+
 * {
   box-sizing: border-box;
   margin: 0;
@@ -121,18 +149,6 @@ body {
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
   background-size: 400% 400%;
   animation: gradient 5s ease infinite;
-}
-
-@keyframes gradient {
-  0% {
-    background-position: 20% 50%;
-  }
-  50% {
-    background-position: 80% 50%;
-  }
-  100% {
-    background-position: 20% 50%;
-  }
 }
 
 section {
@@ -157,18 +173,22 @@ section {
   margin-top: 40px;
 }
 
-.card_family {
-  /* width: 240px;*/
-  
-  /*  height: calc((240px)*1.54);*/
+/* ===================================== */
+/* ============= TITLE ================= */
+/* ===================================== */
+
+h1 {
+  text-align: center;
 }
 
-.card_family {
+h1 span {
+  font-size: 1rem;
+  font-weight: 500;
 }
 
-.card_family * {
-  color: black;
-}
+/* ===================================== */
+/* ============= BONUS CARD ============ */
+/* ===================================== */
 
 .card {
   /* width: 240px;*/
@@ -368,7 +388,6 @@ section {
 }
 
 #codeInput {
-  display: none;
   position: relative;
   top: 45%;
 }
@@ -420,6 +439,10 @@ section {
   display: none;
 }
 
+.show {
+  display: block;
+}
+
 .correct {
     color: green;
 }
@@ -455,12 +478,18 @@ section {
   min-width: 240px;
   min-height: 370px;
   border-radius: 16px;
+  font-size: 1.6rem;
+  font-weight: 600;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   color: rgb(88 199 250 / 0%);
   cursor: pointer;
   background: white;
-  width: var(--card-width);
-  height: var(--card-height);
+  width: var(--card-width-family);
+  height: var(--card-height-family);
 }
 
 .gallery-item-1 {

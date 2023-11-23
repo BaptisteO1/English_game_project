@@ -6,7 +6,10 @@ document.getElementById('bonusFamily5').classList.add('hidden');
 document.getElementById('bonusFamily6').classList.add('hidden');
 document.getElementById('bonusFamily7').classList.add('hidden');
 document.getElementById('BonusCards').classList.add('hidden');
+document.getElementById('codeInput').classList.add('hidden');
 
+// Afficher titre section
+let titleSection = document.getElementById('title_Home').innerText = 'Choose your Familly';
 
 
 const familyBonusMapping = {
@@ -21,8 +24,9 @@ const familyBonusMapping = {
 
 function showCodeInput(cardId, correctCode) {
     // Masquer les cartes et afficher le champ de texte
-    document.getElementById('cardsContainer').style.display = 'none';
-    document.getElementById('codeInput').style.display = 'block';
+    document.getElementById('cardsContainer').classList.add('hidden');
+    document.getElementById('codeInput').classList.add('show');
+    titleSection = document.getElementById('title_Home').innerText = 'Enter The Code of your Family';
    
     // Stocker les informations de la carte sélectionnée dans les attributs data
     document.getElementById('codeInput').setAttribute('data-card-id', cardId);
@@ -67,6 +71,8 @@ function checkCode() {
     if (userCode === correctCode) {
         // Afficher une nouvelle carte avec une nouvelle couleur
         document.getElementById(cardId).style.backgroundColor = getRandomColor();
+
+        titleSection = document.getElementById('title_Home').innerHTML = 'here\'s your last card <br /> <span>place it in the right spot on the board!</span>';
         
         // Afficher la carte bonus correspondante
         document.getElementById('BonusCards').classList.remove('hidden');
@@ -86,9 +92,13 @@ function checkCode() {
         // Masquer les cartes Famille
         document.getElementById('familyCards').style.display = 'none';
 
+        document.getElementById('gallery-controls').style.display = 'none';
+
+
     } else {
         // Masquer le champ de texte
-        document.getElementById('codeInput').style.display = 'none';
+        document.getElementById('codeInput').classList.remove('show');
+        document.getElementById('codeInput').classList.add('hidden');
 
         resultCompare = compareCode ();
         document.getElementById('compare').innerHTML = resultCompare;
@@ -101,8 +111,8 @@ function checkCode() {
             document.getElementById('errorMessage').innerText = '';
             document.getElementById('compare').innerHTML = '';
 
-            // Afficher les cartes
-            document.getElementById('cardsContainer').style.display = 'flex';
+            document.getElementById('cardsContainer').classList.remove('hidden');
+            titleSection = document.getElementById('title_Home').innerText = 'Choose your Familly';
         }, 2500);
     }
 }

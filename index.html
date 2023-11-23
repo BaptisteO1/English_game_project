@@ -8,137 +8,146 @@
     <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-    <section class="">
-        <div id="back"></div>
+    <section class="section">
         <h1 id="title_Home">Choose your Familly</h1>
+        <!-- Cartes représentant les familles -->
         <div class="center gallery" id="cardsContainer">
             <!-- Cartes représentant les familles -->
             <div class="container center gallery-container" id="familyCards">
-                <div class="card_family gallery-item gallery-item-1" id="family1" onclick="showCodeInput('family1', '264513')">
-                    <p>test</p>
+                <div class="gallery-item gallery-item-1" id="family1" onclick="showCodeInput('family1', '264513')">
+                    <p>Family <br /> 1400-1700 </p>
                 </div>
-                <div class="card_family gallery-item gallery-item-2" id="family2" onclick="showCodeInput('family2', '346521')"></div>
-                <div class="card_family gallery-item gallery-item-3" id="family3" onclick="showCodeInput('family3', '246135')"></div>
-                <div class="card_family gallery-item gallery-item-4" id="family4" onclick="showCodeInput('family4', '351624')"></div>
-                <div class="card_family gallery-item gallery-item-5" id="family5" onclick="showCodeInput('family5', '162534')"></div>
-                <div class="card_family gallery-item gallery-item-6" id="family6" onclick="showCodeInput('family6', '136254')"></div>
+                <div class="gallery-item gallery-item-2" id="family2" onclick="showCodeInput('family2', '346521')">
+                    <p>Family <br /> 1750-1850 </p>
+                </div>
+                <div class="gallery-item gallery-item-3" id="family3" onclick="showCodeInput('family3', '246135')">
+                    <p>Family <br /> 1850-1920 </p>
+                </div>
+                <div class="gallery-item gallery-item-4" id="family4" onclick="showCodeInput('family4', '351624')">
+                    <p>Family <br /> 1920-1960 </p>
+                </div>
+                <div class="gallery-item gallery-item-5" id="family5" onclick="showCodeInput('family5', '162534')">
+                    <p>Family <br /> 1970-2000 </p>
+                </div>
+                <div class="gallery-item gallery-item-6" id="family6" onclick="showCodeInput('family6', '136254')">
+                    <p>Family <br /> 2000-today</p>
+                </div>
             </div>
-            <div class="gallery-controls"></div>
+            <div class="gallery-controls" id="gallery-controls"></div>
         </div>
-            <!-- Cartes représentant les familles -->
-            <div class="container center" id="BonusCards">
-                <p>You've just unlocked <br />your secret card!</p>
-                <div class="card center tiltcard" data-tilt data-tilt-glare id="bonusFamily1">
-                    <div class="content-card">
-                        <div class="title_card">
-                            <p>What is the period ?</p>
-                        </div>
-                        <div class="main_card">
-                            <p>Typography</p>
-                            <img src="img/humastic_type.png" alt="">
-                        </div>
-                        <div class="description_card">
-                            <p class="description_card_title">Humanistique</p>
-                            <p>The work of Venetian engraver and printer Nicolas Jenson is often cited as an example of this period's use of thypography.</p>
-                        </div>
+        <!-- Cartes représentant les bonus -->
+        <div class="container center" id="BonusCards">
+            <p>You've just unlocked <br />your secret card!</p>
+            <div class="card center tiltcard" data-tilt data-tilt-glare id="bonusFamily1">
+                <div class="content-card">
+                    <div class="title_card">
+                        <p>What is the period ?</p>
                     </div>
-                </div>
-                <div class="card center tiltcard" data-tilt data-tilt-glare id="bonusFamily2">
-                    <div class="content-card">
-                        <div class="title_card">
-                            <p>What is the period ?</p>
-                        </div>
-                        <div class="main_card">
-                            <p>Support</p>
-                            <img src="img/estampes_japonaises.png" alt="">
-                        </div>
-                        <div class="description_card">
-                            <p class="description_card_title">Estampes japonaises</p>
-                            <p>The illustration is first drawn by the artist in Indian ink and brush. Next comes wood engraving, also known as xylography. This technique highlights the drawing in relief, like stamps.</p>
-                        </div>
+                    <div class="main_card">
+                        <p>Typography</p>
+                        <img src="img/humastic_type.png" alt="">
                     </div>
-                </div>
-                <div class="card center tiltcard" data-tilt data-tilt-glare id="bonusFamily3">
-                    <div class="content-card">
-                        <div class="title_card">
-                            <p>What is the period ?</p>
-                        </div>
-                        <div class="main_card">
-                            <p>Personality</p>
-                            <img src="img/Peter_Behrens.png" alt="">
-                        </div>
-                        <div class="description_card">
-                            <p class="description_card_title">Peter Behrens</p>
-                            <p>German architect and designer Peter Behrens was one of the first to apply unified design principles to architecture, industrial design and graphics. He was an influential member of the Deutscher Werkbund movement. </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card center tiltcard" data-tilt data-tilt-glare id="bonusFamily4">
-                    <div class="content-card">
-                        <div class="title_card">
-                            <p>What is the period ?</p>
-                        </div>
-                        <div class="main_card">
-                            <p>Brand</p>
-                            <img src="img/ray-ban.png" alt="">
-                        </div>
-                        <div class="description_card">
-                            <p class="description_card_title">Ray-Ban</p>
-                            <p>the sunglasses brand, was created to meet the needs of U.S. Army pilots. Aviators and Wayfarers have become iconic styles.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card center tiltcard" data-tilt data-tilt-glare id="bonusFamily5">
-                    <div class="content-card">
-                        <div class="title_card">
-                            <p>What is the period ?</p>
-                        </div>
-                        <div class="main_card">
-                            <p>Event</p>
-                            <img src="img/code_bar.png" alt="">
-                        </div>
-                        <div class="description_card">
-                            <p class="description_card_title">first use of a bar code</p>
-                            <p>The first barcode was scanned on June 26, 1974 in Troy, Ohio. Although this event has more to do with technology than graphic design per se, the ubiquitous use of barcodes in packaging and label design has had a significant impact on product visuals.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card center tiltcard" data-tilt data-tilt-glare id="bonusFamily6">
-                    <div class="content-card">
-                        <div class="title_card">
-                            <p>What is the period ?</p>
-                        </div>
-                        <div class="main_card">
-                            <p>Logo</p>
-                            <img src="img/tesla.png" alt="">
-                        </div>
-                        <div class="description_card">
-                            <p class="description_card_title">Tesla</p>
-                            <p>The logo of Tesla, the electric car manufacturer, is simple and elegant, representing a stylized letter "T" inside a circle.</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="card center tiltcard" data-tilt data-tilt-glare id="bonusFamily7">
-                    <div class="content-card">
-                        <div class="title_card">
-                            <p>What is the period ?</p>
-                        </div>
-                        <div class="main_card">
-                            <p>Typography</p>
-                            <img src="img/img_design.jpg" alt="">
-                        </div>
-                        <div class="description_card">
-                            <p class="description_card_title">Title</p>
-                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, minima at quidem ullam dolorum ipsam quia quisquam.</p>
-                        </div>
+                    <div class="description_card">
+                        <p class="description_card_title">Humanistique</p>
+                        <p>The work of Venetian engraver and printer Nicolas Jenson is often cited as an example of this period's use of thypography.</p>
                     </div>
                 </div>
             </div>
+            <div class="card center tiltcard" data-tilt data-tilt-glare id="bonusFamily2">
+                <div class="content-card">
+                    <div class="title_card">
+                        <p>What is the period ?</p>
+                    </div>
+                    <div class="main_card">
+                        <p>Support</p>
+                        <img src="img/estampes_japonaises.png" alt="">
+                    </div>
+                    <div class="description_card">
+                        <p class="description_card_title">Estampes japonaises</p>
+                        <p>The illustration is first drawn by the artist in Indian ink and brush. Next comes wood engraving, also known as xylography. This technique highlights the drawing in relief, like stamps.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card center tiltcard" data-tilt data-tilt-glare id="bonusFamily3">
+                <div class="content-card">
+                    <div class="title_card">
+                        <p>What is the period ?</p>
+                    </div>
+                    <div class="main_card">
+                        <p>Personality</p>
+                        <img src="img/Peter_Behrens.png" alt="">
+                    </div>
+                    <div class="description_card">
+                        <p class="description_card_title">Peter Behrens</p>
+                        <p>Peter Behrens, a German architect and designer, innovatively applied unified design principles, notably influencing the Deutscher Werkbund movement.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card center tiltcard" data-tilt data-tilt-glare id="bonusFamily4">
+                <div class="content-card">
+                    <div class="title_card">
+                        <p>What is the period ?</p>
+                    </div>
+                    <div class="main_card">
+                        <p>Brand</p>
+                        <img src="img/ray-ban.png" alt="">
+                    </div>
+                    <div class="description_card">
+                        <p class="description_card_title">Ray-Ban</p>
+                        <p>the sunglasses brand, was created to meet the needs of U.S. Army pilots. Aviators and Wayfarers have become iconic styles.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card center tiltcard" data-tilt data-tilt-glare id="bonusFamily5">
+                <div class="content-card">
+                    <div class="title_card">
+                        <p>What is the period ?</p>
+                    </div>
+                    <div class="main_card">
+                        <p>Event</p>
+                        <img src="img/code_bar.png" alt="">
+                    </div>
+                    <div class="description_card">
+                        <p class="description_card_title">first use of a bar code</p>
+                        <p>The first barcode was scanned on June 26, 1974 in Troy, Ohio. Although this event has more to do with technology than graphic design per se, the ubiquitous use of barcodes in packaging and label design has had a significant impact on product visuals.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card center tiltcard" data-tilt data-tilt-glare id="bonusFamily6">
+                <div class="content-card">
+                    <div class="title_card">
+                        <p>What is the period ?</p>
+                    </div>
+                    <div class="main_card">
+                        <p>Logo</p>
+                        <img src="img/tesla.png" alt="">
+                    </div>
+                    <div class="description_card">
+                        <p class="description_card_title">Tesla</p>
+                        <p>The logo of Tesla, the electric car manufacturer, is simple and elegant, representing a stylized letter "T" inside a circle.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="card center tiltcard" data-tilt data-tilt-glare id="bonusFamily7">
+                <div class="content-card">
+                    <div class="title_card">
+                        <p>What is the period ?</p>
+                    </div>
+                    <div class="main_card">
+                        <p>Typography</p>
+                        <img src="img/img_design.jpg" alt="">
+                    </div>
+                    <div class="description_card">
+                        <p class="description_card_title">Title</p>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, minima at quidem ullam dolorum ipsam quia quisquam.</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div id="codeInput">
           <!-- Champ de texte pour saisir le code -->
-          <input type="text" id="code" placeholder="Entrez le code">
-          <button onclick="checkCode()">Validate</button>
+        <div id="codeInput">
+            <input type="text" id="code" placeholder="Entrez le code">
+            <button onclick="checkCode()">Validate</button>
         </div>
         <div id="errorContain">
             <p id="errorMessage"></p>
