@@ -152,25 +152,12 @@ body {
 }
 
 section {
-  padding: 40px 0;
+  padding: 40px;
   width: 90%;
   position: relative;
   display: flex;
   align-items: center;
   flex-direction: column;
-}
-
-.center {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.container {
-  flex-wrap: wrap;
-  width: 100%;
-  gap: 32px;
-  margin-top: 40px;
 }
 
 /* ===================================== */
@@ -184,6 +171,43 @@ h1 {
 h1 span {
   font-size: 1rem;
   font-weight: 500;
+}
+
+
+/* ===================================== */
+/* ============= PROPRIETE ============= */
+/* ===================================== */
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  width: 100%;
+  gap: 32px;
+  margin-top: 40px;
+}
+
+/* ===================================== */
+/* ============= PROPRIETE JS ========== */
+/* ===================================== */
+
+.hidden {
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.correct {
+    color: green;
+}
+
+.incorrect {
+    color: red;
 }
 
 /* ===================================== */
@@ -211,6 +235,11 @@ h1 span {
 .card * {
   color: black;
 }
+
+
+/* ===================================== */
+/* ============= BONUS CARD ============ */
+/* ===================================== */
 
 .content-card {
     width: 100%;
@@ -387,6 +416,11 @@ h1 span {
   font-weight: 600;
 }
 
+
+/* ===================================== */
+/* ============= CODE SECTION ========== */
+/* ===================================== */
+
 #codeInput {
   position: relative;
   top: 45%;
@@ -434,31 +468,40 @@ h1 span {
     font-weight: 600;
 }
 
-
-.hidden {
-  display: none;
-}
-
-.show {
-  display: block;
-}
-
-.correct {
-    color: green;
-}
-
-.incorrect {
-    color: red;
-}
-
-/* ==========================
-=============================
-================================ */
+/* ===================================== */
+/* ============= CARD FAMILY =========== */
+/* ===================================== */
 
 .gallery {
   width: 100%;
   flex-direction: column;
   margin-top: 40px;
+}
+
+@media (max-width > 492px) {
+  .gallery-item {
+    width: 80px;
+    height: 120px;
+    min-width: 80px;
+    min-height: 120px;
+  }
+
+  .gallery-item-2, .gallery-item-4 {
+    height: 140px;
+    opacity: 0.8;
+    width: 90px;
+    z-index: 1;
+  }
+
+  .gallery-item-3 {
+    box-shadow: -2px 5px 33px 6px rgba(0, 0, 0, 0.35);
+    height: 154px;
+    opacity: 1;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    z-index: 2;
+  }
 }
 
 .gallery-container {
