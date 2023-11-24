@@ -9,6 +9,8 @@ document.getElementById('BonusCards').classList.add('hidden');
 document.getElementById('codeInput').classList.add('hidden');
 document.getElementById('errorContain').classList.add('hidden');
 document.getElementById('inputContain').classList.add('hidden');
+document.getElementById('inputContain').classList.add('hidden');
+document.getElementById('back').classList.add('hidden');
 
 // Afficher titre section
 let titleSection = document.getElementById('title_Home').innerText = 'Choose your Familly';
@@ -24,7 +26,23 @@ const familyBonusMapping = {
     'family7': 'bonusFamily7'
 };
 
+function backButton () {
+    document.getElementById('errorMessage').innerText = '';
+    document.getElementById('compare').innerHTML = '';
+    document.getElementById('code').value = '';
+
+    document.getElementById('cardsContainer').classList.remove('hidden');
+    document.getElementById('inputContain').classList.remove('flex');
+    document.getElementById('inputContain').classList.add('hidden');
+    document.getElementById('back').classList.remove('flex');
+    document.getElementById('back').classList.add('hidden');
+    titleSection = document.getElementById('title_Home').innerText = 'Choose your Familly';
+}
+
 function showCodeInput(cardId, correctCode) {
+    document.getElementById('back').classList.remove('hidden');
+    document.getElementById('back').classList.add('flex');
+
     document.getElementById('inputContain').classList.remove('hidden');
     document.getElementById('inputContain').classList.add('flex');
     // Masquer les cartes et afficher le champ de texte
@@ -99,6 +117,9 @@ function checkCode() {
 
         document.getElementById('gallery-controls').style.display = 'none';
 
+        document.getElementById('back').classList.remove('flex');
+        document.getElementById('back').classList.add('hidden');
+
 
     } else {
         // Masquer le champ de texte
@@ -119,6 +140,7 @@ function checkCode() {
             document.getElementById('compare').innerHTML = '';
             document.getElementById('code').value = '';
 
+            document.getElementById('back').classList.remove('flex');
             document.getElementById('cardsContainer').classList.remove('hidden');
             document.getElementById('inputContain').classList.remove('flex');
             titleSection = document.getElementById('title_Home').innerText = 'Choose your Familly';

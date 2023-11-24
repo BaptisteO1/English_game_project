@@ -157,6 +157,23 @@ section {
   display: flex;
   align-items: center;
   flex-direction: column;
+  max-width: 1000px;
+}
+
+.back {
+  position: absolute;
+  left: 20%;
+  width: 32px;
+  height: 32px;
+  border: 2px white solid;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+}
+
+.back img {
+  width: 20px;
+  height: 20px;
 }
 
 /* ===================================== */
@@ -226,19 +243,19 @@ h1 span {
 
 @media (max-width: 495px) {
   .card {
-    min-width: 240px;
-    min-height: 370px;
-    max-width: 240px;
-    max-height: 370px;
+    min-width: 270px;
+    min-height: 405px;
+    max-width: 270px;
+    max-height: 405px;
   }
 }
 
 .card {
   background: linear-gradient(90deg, rgba(93,220,255,1) 0%, rgba(60,103,227,1) 43%, rgba(78,0,194,1) 100%);
-  width: var(--card-width);
+  width: 400px;
   height: var(--card-height);
   position: relative;
-  border-radius: 16px;
+  border-radius: 20px;
   text-align: center;
   color: rgb(88 199 250 / 0%);
   cursor: pointer;
@@ -254,18 +271,19 @@ h1 span {
 /* ===================================== */
 
 .content-card {
-    width: 100%;
-    height: 100%;
+    width: 92%;
+    height: 94%;
     background-color: white;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     overflow: hidden;
-    border-radius: 16px;
+    border-radius: 14px;
     transform: rotateX(30deg), rotateY(30deg);
 }
 
+/*
 .content-card::before {
     content: "";
     width: 106%;
@@ -294,6 +312,7 @@ h1 span {
     transition: opacity .5s;
     animation: spin 2.5s linear infinite;
   }
+*/
 
 #BonusCards {
   flex-wrap: nowrap;
@@ -305,7 +324,17 @@ h1 span {
   text-align: center;
 }
 
+@media (max-width: 900px) {
+  .back {
+    left: 0;
+  }
+}
+
 @media (max-width: 769px) {
+#title_Home {
+  width: 60%;
+}
+
   .container {
     margin: 0;
   }
@@ -330,14 +359,14 @@ h1 span {
 
 .title_card {
   position: absolute;
-  top: 0;
+  top: 3%;
   border-radius: 0 0 5px 5px;
-  background: linear-gradient(90deg, rgba(93,220,255,1) 0%, rgba(60,103,227,1) 43%, rgba(78,0,194,1) 100%);
+  background: linear-gradient(270deg, #491CCB 0.07%, #4438D4 22.34%, #3E5DE0 51.8%, #4381E9 73.91%, #51B3F5 99.91%);
   display: flex;
   justify-content: center;
   align-items: center;
   height: 32px;
-  width: 75%;
+  width: 70%;
 }
 
 .title_card > p {
@@ -347,6 +376,7 @@ h1 span {
     font-size: 0.8rem;
 }
 
+/*
 .title_card::before {
     content: "";
     width: 106%;
@@ -375,6 +405,7 @@ h1 span {
     transition: opacity .5s;
     animation: spin 2.5s linear infinite;
   }
+*/
 
 .main_card {
   margin-top: 30px;
@@ -387,6 +418,7 @@ h1 span {
   overflow: hidden;
 }
 
+/*
 .main_card::before {
     content: "";
     width: 80%;
@@ -415,6 +447,7 @@ h1 span {
     transition: opacity .5s;
     animation: spin 2.5s linear infinite;
   }
+*/
 
 .main_card > p {
     z-index: 1;
@@ -436,7 +469,7 @@ h1 span {
   display: flex;
   flex-direction: column;
   align-items: center;
-  width: 80%;
+  width: 90%;
   font-size: 0.8rem;
 }
 

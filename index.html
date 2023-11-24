@@ -9,6 +9,9 @@
 </head>
 <body>
     <section class="">
+        <div onclick="backButton()" class="back" id="back">
+            <img src="data:image/png;base64,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">
+        </div>
         <h1 id="title_Home">Choose your Familly</h1>
         <!-- Cartes représentant les familles -->
         <div class="center gallery" id="cardsContainer">
@@ -20,7 +23,7 @@
                 <div class="gallery-item gallery-item-2" id="family2" onclick="showCodeInput('family2', '346521')">
                     <p>Family <br /> 1750-1850 </p>
                 </div>
-                <div class="gallery-item gallery-item-3" id="family3" onclick="showCodeInput('family3', '')"> <!--246135-->
+                <div class="gallery-item gallery-item-3" id="family3" onclick="showCodeInput('family3', '246135')"> 
                     <p>Family <br /> 1850-1920 </p>
                 </div>
                 <div class="gallery-item gallery-item-4" id="family4" onclick="showCodeInput('family4', '351624')">
